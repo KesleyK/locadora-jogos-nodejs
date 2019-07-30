@@ -1,0 +1,115 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box; }
+
+.btn {
+  text-decoration: none;
+  background-color: #5f9d9f;
+  color: #000;
+  text-transform: uppercase;
+  display: inline-block;
+  padding: 10px 70px;
+  border-radius: 100px;
+  transition: all .2s; }
+  .btn-animated {
+    box-shadow: rgba(0, 0, 0, 0.4) 0 3px 10px; }
+    .btn-animated:hover {
+      background-color: #00f5fd;
+      cursor: pointer;
+      box-shadow: rgba(0, 0, 0, 0.6) 0 1px 10px; }
+
+.btn-remove-rentedGame {
+  margin-top: 10px; }
+  .btn-remove-rentedGame:hover {
+    background-color: #7a0303;
+    color: cornsilk; }
+
+.footer {
+  background-color: #254d4e;
+  color: rgba(255, 255, 255, 0.7);
+  padding: 15px;
+  box-shadow: black 0 2px 10px; }
+
+.div-games {
+  padding: 20px; }
+  .div-games .games-list {
+    list-style: none; }
+    .div-games .games-list li {
+      height: 160px;
+      margin-bottom: 10px;
+      box-shadow: rgba(0, 0, 0, 0.37) 0 1px 4px;
+      padding: 15px; }
+
+.game-data {
+  margin-bottom: 20px; }
+
+header {
+  height: 200px;
+  position: relative;
+  background-image: url("https://miro.medium.com/max/3840/1*Veun6E1Q13DxZ2A4YRk_og.jpeg");
+  background-size: cover;
+  box-shadow: rgba(0, 0, 0, 0.623) 0 2px 3px; }
+
+.enjoy-box {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translateX(-50%) translateY(-50%); }
+
+.enjoy-text {
+  text-transform: uppercase;
+  font-size: 60px;
+  font-weight: 200;
+  letter-spacing: 30px;
+  color: white;
+  text-shadow: black 0 1px 20px;
+  animation: opacityTransition 3s ease-out; }
+
+@keyframes opacityTransition {
+  0% {
+    opacity: 0; }
+  100% {
+    opacity: 1; } }
+
+nav {
+  padding: 20px;
+  background-color: #eee;
+  position: relative;
+  box-shadow: rgba(0, 0, 0, 0.623) 0 2px 10px; }
+  nav::after {
+    content: "";
+    clear: both;
+    display: table; }
+
+.navigation {
+  list-style: none;
+  float: left; }
+  .navigation li {
+    display: inline-block;
+    margin-left: 30px;
+    transition: all .3s; }
+    .navigation li a:link, .navigation li a:visited {
+      text-decoration: none;
+      text-transform: uppercase;
+      color: #303030; }
+    .navigation li:hover {
+      transform: skewY(2deg) scale(1.3); }
+
+.default-margin {
+  padding: 20px; }
+  .default-margin .btn {
+    margin-top: 10px; }
+  .default-margin .user-data {
+    margin-bottom: 10px;
+    box-shadow: rgba(0, 0, 0, 0.37) 0 1px 4px;
+    padding: 15px; }
+  .default-margin .games-data {
+    box-shadow: rgba(0, 0, 0, 0.37) 0 1px 4px;
+    padding: 15px; }
+    .default-margin .games-data ul {
+      list-style: none; }
+      .default-margin .games-data ul li {
+        margin-top: 10px;
+        margin-left: 10px;
+        margin-bottom: 10px; }

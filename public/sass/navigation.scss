@@ -1,0 +1,39 @@
+@mixin clearfix {
+  &::after {
+    content: "";
+    clear: both;
+    display: table;
+  }
+}
+
+nav {
+  padding: 20px;
+  background-color: #eee;
+  position: relative;
+  box-shadow: rgba(0, 0, 0, 0.623) 0 2px 10px;
+
+  @include clearfix;
+}
+
+.navigation {
+  list-style: none;
+  float: left;
+
+  li {
+    display: inline-block;
+    margin-left: 30px;
+    transition: all .3s;
+
+    a {
+      &:link,
+      &:visited {
+        text-decoration: none;
+        text-transform: uppercase;
+        color: rgb(48, 48, 48);
+      }
+    }
+    &:hover {
+      transform: skewY(2deg) scale(1.3);
+    }
+  }
+}

@@ -1,0 +1,14 @@
+*{
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+@import 'utilities/cards.scss'; 
+
+@import './button-style.scss';
+@import './footer.scss'; 
+@import './games-list.scss';
+@import './header-style.scss';
+@import './navigation.scss';
+@import './base-content.scss'; 

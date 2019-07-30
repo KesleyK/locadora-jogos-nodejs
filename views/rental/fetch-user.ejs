@@ -1,0 +1,51 @@
+<%- include('../includes/head') %>
+</head>
+<body>
+  <header class="header">
+  </header>
+  <%- include('../includes/navigation') %>
+
+  <main class="default-margin">
+    <% if(pageStatus === 'findUser') { %>
+      <form action="/user" method="post">
+        <div>
+          <label for="cpf">User CPF</label><br>
+          <input type="text" name="cpf">
+        </div>
+        <button class="btn btn-animated" type="submit">Fetch</button>
+      </form>
+    <% } 
+    else if(pageStatus == 'userArea') { %>
+      <div class="user-data">
+        <h1>User Data</h1>
+        <p><strong>Name:</strong> <%= user.name %></p>
+        <p><strong>Email:</strong> <%= user.email %></p>
+      </div>
+      <div class="games-data">
+        <h1>Games Data</h1>
+        <% if(user.games.length > 0){ %>
+          <ul>
+            <% user.games.forEach(game => { %>
+              <li>
+                <p><strong>Name:</strong> <%= game.gameId.name %></p>
+                <p><strong>Price:</strong> <%= game.gameId.price %></p>
+                <p><strong>Rented At:</strong> <%= game.rentalDate %></p>
+                <p><strong>Days Quantity:</strong> <%= game.daysQnt %></p>
+                <form action="/remove-game-user/<%= game._id %>" method="post">
+                  <input type="hidden" value="<%= user.cpf %>" name="cpf">
+                  <input type="hidden" value="<%= game.gameId._id %>" name="gameId">
+                  <button class="btn btn-animated btn-remove-rentedGame" type="submit">Remove</button>
+                </form>
+              </li>
+              <hr>
+            <% }) %>
+          </ul>
+        <% }
+        else { %>
+          <h3>Empty</h3>
+        <% } %>
+      </div>
+    <% } %>
+  </main>
+</body>
+</html>

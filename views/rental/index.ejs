@@ -1,0 +1,43 @@
+<%- include('../includes/head') %>
+</head>
+
+<body>
+  <header class="header">
+    <h1 class="enjoy-box">
+      <span class="enjoy-text">Enjoy!</span>
+    </h1>
+    <div>
+      Image via: https://coletivoux.com/a-filosofia-nos-games-74f9fa6cde03
+    </div>
+  </header>
+  <%- include('../includes/navigation') %>
+
+  <section class="div-games">
+    <% if(games.length > 0){ %>
+    <ul class="games-list">
+      <% for(let game of games){ %>
+      <li>
+        <div class="game-data">
+          <p><strong>Name:</strong> <%= game.name %></p>
+          <p><strong>Price:</strong> R$<%= game.price %></p>
+          <p><strong>Description:</strong> <%= game.description %></p>
+          <p><strong>Status:</strong> <%= game.rentedBool ? 'Rented':'Available' %> </p>
+        </div>
+        <% if(game.rentedBool) { %>
+        <a class="btn btn-animated" href="/check-info/<%= game._id %>">Info</a>
+        <% }
+          else { %>
+        <a class="btn btn-animated" href="/rent-game/<%= game._id %>?pageStatus=selectUser">Rent Game</a>
+        <% } %>
+      </li>
+      <% } %>
+    </ul>
+    <% } %>
+  </section>
+
+  <footer class="footer">
+    &reg; 2019 Api desenvolvida por Kesley Kenny.
+  </footer>
+</body>
+
+</html>

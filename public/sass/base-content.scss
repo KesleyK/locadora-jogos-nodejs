@@ -1,0 +1,27 @@
+.default-margin {
+  padding: 20px;
+  
+  .btn{
+    margin-top: 10px;
+  }
+
+  .user-data {
+    margin-bottom: 10px;
+    @include card-lowShadow();
+  }
+
+  .games-data {
+    @include card-lowShadow();
+
+    ul {
+      list-style: none;
+
+      li {
+        margin-top: 10px;
+        margin-left: 10px;
+        margin-bottom: 10px;
+      }
+    }
+
+  }
+}

@@ -1,0 +1,39 @@
+<%- include('../includes/head') %>
+
+</head>
+<body>
+  <header class="header">
+  </header>
+  <%- include('../includes/navigation') %>
+  
+  <div class="default-margin">
+    <% if(pageStatus == 'selectUser') { %>
+      <h1>Select User</h1>
+      <div>
+        <a class="btn" href="/rent-game/<%= gameId %>?pageStatus=newUser">New User</a>
+        <a class="btn" href="/rent-game/<%= gameId %>?pageStatus=oldUser">Old User</a>
+      </div>
+    <% } 
+    else if(pageStatus == 'newUser') { %>
+      <h1>New User</h1>
+      <form action="/rent-game/<%= gameId %>/newUser" method="POST">
+        <div>
+          <label for="name">Name</label><br>
+          <input type="text" name="name">
+        </div>
+        <div>
+          <label for="email">E-mail</label><br>
+          <input type="text" name="email">
+        </div>
+        <%- include('../includes/main-data-user') %>
+      </form>
+    <% } 
+    else if(pageStatus == 'oldUser') { %>
+      <h1>Old User</h1>
+      <form action="/rent-game/<%= gameId %>/oldUser" method="POST">
+        <%- include('../includes/main-data-user') %>
+      </form>
+    <% } %>
+  </div>
+</body>
+</html>

@@ -1,0 +1,17 @@
+.div-games {
+  padding: 20px;
+  
+  .games-list{
+    list-style: none;
+
+    li {
+      height: 160px;
+      margin-bottom: 10px;
+      @include card-lowShadow();
+    }
+  }
+}
+
+.game-data {
+  margin-bottom: 20px;
+}

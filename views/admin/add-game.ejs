@@ -1,0 +1,29 @@
+<%- include('../includes/head') %>
+
+</head>
+<body>
+  <header class="header">
+  </header>
+  <%- include('../includes/navigation') %>
+  
+  <div class="default-margin">
+    <h1>Adding a new game</h1>
+    <form action="/admin/add-game" method="post">
+      <div>
+        <label for="name">Name</label><br>
+        <input type="text" name="name">
+      </div>
+      <div>
+        <label for="price">Price</label><br>
+        <input type="number" name="price">
+      </div>
+      <div>
+        <label for="description">Description</label><br>
+        <textarea cols="30" rows="5" name="description"></textarea>
+      </div>
+
+      <button class="btn btn-animated" type="submit">Add Game</button>
+    </form>
+  </div>
+</body>
+</html>
